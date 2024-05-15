@@ -1,0 +1,48 @@
+﻿@page
+@model P1_Ejercicios_RazorPage.Pages.Programa1Model
+@{
+}
+
+<p>Calculadora de Indice de Masa Corporal</p>
+
+
+<form method="post">
+    <p>Peso: <input type="text" asp-for="peso" /></p>
+    <p>Altura: <input type="text" asp-for="altura" /></p>
+    <p><input type="submit" value="Calcular" /></p>
+
+    @if (Model.IMC != 0)
+    {
+        <div><strong>Indice de Masa Corporal (IMC) = @Model.IMC</strong></div>
+
+        <div>
+            <strong>
+                La clasificacion a la que perteneces es:
+                @if (Model.IMC < 18)
+                {
+                    <h5>Peso bajo</h5>
+                }
+                else if (Model.IMC < 25)
+                {
+                    <h5>Peso Normal</h5>
+                }
+                else if (Model.IMC < 27)
+                {
+                    <h5>Sobrepeso</h5>
+                }
+                else if (Model.IMC < 30)
+                {
+                    <h5>Obesidad grado 1</h5>
+                }
+                else if (Model.IMC < 40)
+                {
+                    <h5>Obesidad grado 2</h5>
+                }
+                else if (Model.IMC >= 40)
+                {
+                    <h5>Obesidad grado 3</h5>
+                }
+            </strong>
+        </div>
+    }
+</form>

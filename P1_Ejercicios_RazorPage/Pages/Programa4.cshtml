@@ -1,0 +1,18 @@
+﻿@page
+@model P1_Ejercicios_RazorPage.Pages.Programa4Model
+@{
+}
+
+<h1>Números Aleatorios:</h1>
+<ul>
+    @foreach (var numero in Model.numeros)
+    {
+        <li>@numero</li>
+    }
+</ul>
+
+<h2>Resultados:</h2>
+<p>Suma: @Model.suma</p>
+<p>Promedio: @Model.promedio</p>
+<p>Moda: @Model.moda</p>
+<p>Mediana: @Model.mediana</p>
